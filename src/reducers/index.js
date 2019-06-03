@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import reducer from './reducer'
+import setup from './setup'
+import punchline from './punchline'
 
 export default combineReducers({
-  reducer
+  setup,
+  punchline
 })

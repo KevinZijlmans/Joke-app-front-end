@@ -1,21 +1,19 @@
+import request from 'superagent'
+
 export const SETUP_JOKE = 'SETUP_JOKE'
 export const SET_PUNCHLINE = 'SET_PUNCHLINE'
 
-
-export function setupJoke(setup) {
-  return {
+const setupJoke = setup => ({
     type: SETUP_JOKE,
-    payload: {
-        setup
-    }
+    setup
+  })
+  
+  export const loadSetup = () => (dispatch, getState) => {
+    if (getState().setup) {
+      request(`https://official-joke-api.appspot.com/jokes/programming/random`)
+        .then(response => {
+          dispatch(setupJoke(response.body.setup))
+        })
+          .catch(console.error)
+      }
   }
-}
-
-export function setPunchline(punchline) {
-    return {
-        type: SET_PUNCHLINE,
-        payload: {
-            punchline
-        }
-    }
-}
