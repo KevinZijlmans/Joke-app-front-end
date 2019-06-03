@@ -19,12 +19,18 @@ export default class Homepage extends Component {
                         <ul>
                             {joke && joke.map(joke => {
                                 return <li key={joke.id}>
-                                    {joke.setup}
-                                    <p>Wait for it!</p>
-                                    <Animated animationIn="bounceInUp" animationInDelay="3000">
-                                    <div>
-                                    {joke.punchline}
-                                    </div>
+                                    <Animated animationIn="bounceInDown">
+                                        <div>
+                                        {joke.setup}
+                                        </div>
+                                    </Animated>
+                                    <Animated animationIn="bounceInLeft" animationInDelay="2000">
+                                        <p>Wait for it!</p>
+                                    </Animated>
+                                    <Animated animationIn="bounceInUp" animationInDelay="5000">
+                                        <div>
+                                        {joke.punchline}
+                                        </div>
                                     </Animated>
                                 </li>
                             })}
