@@ -1,10 +1,9 @@
 import {SETUP_JOKE} from '../actions/joke'
-const initialState = []
 
-const reducer = (state = initialState, action = {}) => {
+const reducer = (state = null, action = {}) => {
     switch (action.type) {
       case SETUP_JOKE:
-        return [...state, ...action.payload]
+        return action.payload
     default:
       return state
     }

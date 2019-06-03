@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
-import setup from './setup'
-import punchline from './punchline'
+import joke from './joke'
 
 export default combineReducers({
-  setup,
-  punchline
+    joke
 })
