@@ -24,10 +24,10 @@ export default class Homepage extends Component {
                                         {joke.setup}
                                         </div>
                                     </Animated>
-                                    <Animated animationIn="bounceInLeft" animationInDelay="2000">
+                                    <Animated animationIn="bounceInLeft" animationInDelay={2000}>
                                         <p>Wait for it!</p>
                                     </Animated>
-                                    <Animated animationIn="bounceInUp" animationInDelay="5000">
+                                    <Animated animationIn="bounceInUp" animationInDelay={5000}>
                                         <div>
                                         {joke.punchline}
                                         </div>
